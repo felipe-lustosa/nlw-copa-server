@@ -3,7 +3,7 @@ import { prisma } from "../lib/prisma";
 import { z } from "zod";
 import shortUniqueId from "short-unique-id";
 
-export function poolRoutes(fastify: FastifyInstance) {
+export async function poolRoutes(fastify: FastifyInstance) {
     fastify.get("/pools/count", async () => {
         const count = await prisma.pool.count();
 
